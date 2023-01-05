@@ -1,3 +1,4 @@
+#1
 import cv2
 import numpy as np
 
@@ -16,4 +17,25 @@ print (con)
 
 cv2.drawContours(new_img, con, -1, (230,111,148,1))
 cv2.imshow("Result", new_img)
+cv2.waitKey(0)
+
+
+
+
+
+#2
+import cv2
+import numpy as np
+
+
+img=cv2.imread("images/ccc.jpg")
+
+img = cv2.cvtColor(img, cv2.COLOR_BGR2LAB)
+img = cv2.cvtColor(img, cv2.COLOR_LAB2BGR)
+img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+r,g,b  =cv2.split(img)
+img=cv2.merge([r,g,b])
+
+cv2.imshow("Result", img)
 cv2.waitKey(0)
